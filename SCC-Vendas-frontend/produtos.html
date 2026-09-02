@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produtos - SCC-Vendas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .dashboard-sidebar { background-color: var(--azul-escuro); border-radius: 0 40px 40px 0; min-height: 100vh; }
+    .dashboard-sidebar .nav-link { color: var(--amarelo) !important; transition: all 0.2s ease-in-out; border-radius: 8px; }
+    .dashboard-sidebar .nav-link:hover, .dashboard-sidebar .nav-link.active-page { color: #ffffff !important; background-color: rgba(255, 255, 255, 0.08); padding-left: 15px !important; }
+    .top-bar-title { background-color: var(--azul-escuro); color: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+    .table-container { background-color: white; border-radius: 15px; padding: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.04); }
+    .search-box { background-color: #E9ECEF; border: none; border-radius: 20px; padding: 10px 20px 10px 40px; width: 100%; max-width: 320px; }
+    .search-wrapper { position: relative; }
+    .search-wrapper i { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #6C757D; }
+  </style>
+</head>
+<body style="background-color: var(--cinza-claro);">
+  <div class="container-fluid min-vh-100 p-0">
+    <div class="row min-vh-100 g-0">
+      <div class="col-md-3 col-lg-2 d-flex flex-column p-4 dashboard-sidebar">
+        <h3 class="fw-bold mb-4" style="color: var(--amarelo);">SCC-Vendas</h3>
+        <div class="d-flex align-items-center mb-4 pb-3 border-bottom border-secondary">
+          <div class="rounded-circle bg-secondary d-flex justify-content-center align-items-center text-white fw-bold fs-4 me-3" style="width: 48px; height: 48px;">C</div>
+          <div><span class="text-white small opacity-75">Olá,</span><h6 class="text-white fw-bold mb-0">Carlos!</h6></div>
+        </div>
+        <ul class="nav flex-column mb-auto gap-1">
+          <li class="nav-item"><a href="dashboard.html" class="nav-link p-2">Inicio</a></li>
+          <li class="nav-item"><a href="clientes.html" class="nav-link p-2">Clientes</a></li>
+          <li class="nav-item"><a href="produtos.html" class="nav-link active-page p-2 d-flex align-items-center"><span class="d-inline-block bg-white rounded-pill me-2" style="width: 5px; height: 16px;"></span> Produtos</a></li>
+          <li class="nav-item"><a href="vendas.html" class="nav-link p-2">Vendas</a></li>
+          <li class="nav-item"><a href="relatorios.html" class="nav-link p-2">Relatórios</a></li>
+        </ul>
+        <hr class="text-secondary my-4">
+        <div><a href="index.html" class="nav-link fw-bold small p-2">Sair da conta</a></div>
+      </div>
+      <div class="col-md-9 col-lg-10 p-4 p-md-5">
+        <div class="top-bar-title p-3 px-4 mb-4 fs-4 fw-bold">Produtos cadastrados</div>
+        <div class="table-container position-relative">
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4 gap-3">
+            <div class="search-wrapper w-100"><i class="bi bi-search"></i><input type="text" class="search-box" placeholder="Digite o codigo ou o nome do produto"></div>
+            <a href="novo_produto.html" class="btn btn-warning fw-bold rounded-pill px-4 shadow-sm py-2 text-nowrap" style="background-color: var(--amarelo); border: none;">+ Novo Produto</a>
+          </div>
+          <div class="table-responsive">
+            <table class="table align-middle mb-0">
+              <thead><tr class="text-uppercase small text-muted border-bottom"><th class="pb-3">CÓD.</th><th class="pb-3">NOME DO PRODUTO</th><th class="pb-3">CATEGORIA</th><th class="pb-3">VALOR</th><th class="pb-3">STATUS</th><th class="pb-3">AÇÕES</th></tr></thead>
+              <tbody>
+                <tr><td class="text-muted fw-semibold">001</td><td class="fw-bold text-dark">Kit Comércio Local</td><td class="text-secondary">Marketing</td><td>R$ 450,00</td><td><span class="text-success fw-semibold">Ativo</span></td><td><a href="#" class="text-decoration-none me-2 fs-5">✏️</a><a href="#" class="text-decoration-none fs-5">🗑️</a></td></tr>
+                <tr><td class="text-muted fw-semibold">002</td><td class="fw-bold text-dark">Licença Vendas PDV</td><td class="text-secondary">Assinatura</td><td>R$ 1.200,00</td><td><span class="text-success fw-semibold">Ativo</span></td><td><a href="#" class="text-decoration-none me-2 fs-5">✏️</a><a href="#" class="text-decoration-none fs-5">🗑️</a></td></tr>
+                <tr><td class="text-muted fw-semibold">003</td><td class="fw-bold text-dark">Painel Administrativo</td><td class="text-secondary">Web</td><td>R$ 2.100,00</td><td><span class="text-danger fw-semibold">Pendente</span></td><td><a href="#" class="text-decoration-none me-2 fs-5">✏️</a><a href="#" class="text-decoration-none fs-5">🗑️</a></td></tr>
+                <tr><td class="text-muted fw-semibold">004</td><td class="fw-bold text-dark">Site Institucional</td><td class="text-secondary">Web Design</td><td>R$ 3.500,00</td><td><span class="text-success fw-semibold">Ativo</span></td><td><a href="#" class="text-decoration-none me-2 fs-5">✏️</a><a href="#" class="text-decoration-none fs-5">🗑️</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
